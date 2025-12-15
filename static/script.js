@@ -5,13 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     carregarDados();
 });
 
-// --- FUNÇÃO DO MODAL (NOVA) ---
 function fecharModal() {
     const modal = document.getElementById('intro-modal');
-    modal.style.display = 'none'; // Esconde o modal ao clicar
+    modal.style.display = 'none'; 
 }
 
-// Busca dados do Python
 async function carregarDados() {
     try {
         const response = await fetch('/api/dados');
@@ -27,7 +25,6 @@ async function carregarDados() {
     }
 }
 
-// Cria a lista lateral
 function criarListaLateral(dados) {
     const lista = document.getElementById('lista-profissoes');
     lista.innerHTML = '';
@@ -48,24 +45,19 @@ function criarListaLateral(dados) {
     });
 }
 
-// Atualiza a tela principal
 function atualizarDashboard(item) {
-    // Textos Básicos
     document.getElementById('titulo-profissao').innerText = item.nome;
     document.getElementById('desc-profissao').innerText = item.descricao;
     
-    // Card Linha 1
     document.getElementById('info-salario').innerText = item.salario_medio;
     document.getElementById('info-crescimento').innerText = item.crescimento;
     document.getElementById('info-ativos').innerText = item.profissionais_ativos;
     document.getElementById('info-estresse').innerText = item.nivel_estresse;
 
-    // Card Linha 2
     document.getElementById('info-futuro').innerText = item.perspectiva_10_anos;
     document.getElementById('info-formados').innerText = item.formados_ano.toLocaleString('pt-BR');
     document.getElementById('info-demanda').innerText = item.demanda_anual.toLocaleString('pt-BR');
 
-    // --- CÁLCULO DE GAP ---
     const gap = item.demanda_anual - item.formados_ano;
     const elementoGap = document.getElementById('info-gap');
 
@@ -86,7 +78,6 @@ function atualizarDashboard(item) {
     atualizarGrafico(item);
 }
 
-// Gera o Gráfico
 function atualizarGrafico(item) {
     const ctx = document.getElementById('meuGrafico').getContext('2d');
 

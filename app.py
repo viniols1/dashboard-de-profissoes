@@ -2,11 +2,7 @@ from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
 
-# --- BANCO DE DADOS COMPLETO E VARIADO ---
 dados_profissoes = [
-    # ==========================
-    # ÁREA: TECNOLOGIA
-    # ==========================
     {
         "id": 1,
         "nome": "Dev. Python (Back-End)",
@@ -80,9 +76,6 @@ dados_profissoes = [
         "demanda_anual": 14000
     },
 
-    # ==========================
-    # ÁREA: SAÚDE
-    # ==========================
     {
         "id": 7,
         "nome": "Médico Cirurgião",
@@ -129,12 +122,9 @@ dados_profissoes = [
         "descricao": "Planeja dietas e promove reeducação alimentar.",
         "perspectiva_10_anos": "+20% (Moderada)",
         "formados_ano": 25000,
-        "demanda_anual": 20000  # Exemplo de Saturado
+        "demanda_anual": 20000
     },
 
-    # ==========================
-    # ÁREA: ENGENHARIA
-    # ==========================
     {
         "id": 11,
         "nome": "Engenheiro Civil",
@@ -145,7 +135,7 @@ dados_profissoes = [
         "descricao": "Projeta e gerencia obras de infraestrutura e edifícios.",
         "perspectiva_10_anos": "+10% (Depende da Economia)",
         "formados_ano": 40000,
-        "demanda_anual": 30000  # Saturado no momento
+        "demanda_anual": 30000
     },
     {
         "id": 12,
@@ -172,9 +162,6 @@ dados_profissoes = [
         "demanda_anual": 18000
     },
 
-    # ==========================
-    # ÁREA: NEGÓCIOS E FINANÇAS
-    # ==========================
     {
         "id": 14,
         "nome": "Gerente de Projetos",
@@ -224,9 +211,6 @@ dados_profissoes = [
         "demanda_anual": 60000
     },
 
-    # ==========================
-    # ÁREA: DIREITO (Exemplo Clássico de Saturação)
-    # ==========================
     {
         "id": 18,
         "nome": "Advogado Júnior",
@@ -236,13 +220,10 @@ dados_profissoes = [
         "nivel_estresse": "Alto",
         "descricao": "Atuação em processos civis, trabalhistas ou criminais.",
         "perspectiva_10_anos": "+5% (Concorrência Alta)",
-        "formados_ano": 120000,  # Brasil forma muitos advogados
-        "demanda_anual": 80000  # Vagas não acompanham
+        "formados_ano": 120000,
+        "demanda_anual": 80000
     },
 
-    # ==========================
-    # ÁREA: CRIATIVA
-    # ==========================
     {
         "id": 19,
         "nome": "UX/UI Designer",
