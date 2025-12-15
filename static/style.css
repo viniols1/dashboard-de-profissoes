@@ -1,0 +1,226 @@
+:root {
+    --bg-color: #08080a;
+    --sidebar-bg: #101014;
+    --card-bg: #16161e;
+    --text-main: #ffffff;
+    --text-muted: #9494a0;
+    --neon-blue: #00f3ff;
+    --neon-glow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+/* --- MODAL DE BOAS-VINDAS (NOVO) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fundo escuro focado */
+    backdrop-filter: blur(5px); /* Efeito de vidro embaçado */
+    z-index: 9999; /* Fica na frente de tudo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 40px;
+    width: 500px;
+    border-radius: 20px;
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-content h2 {
+    color: var(--neon-blue);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-content p {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.alert-box {
+    background-color: rgba(255, 200, 0, 0.1); /* Fundo amarelado sutil */
+    border: 1px solid rgba(255, 200, 0, 0.5);
+    color: #ffdd44;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 25px 0;
+    font-size: 0.9rem;
+}
+
+.btn-start {
+    background-color: var(--neon-blue);
+    color: #000;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+
+.btn-start:hover {
+    box-shadow: 0 0 20px var(--neon-blue);
+    transform: scale(1.05);
+}
+
+/* --- ESTILOS DO DASHBOARD --- */
+.dashboard-container {
+    display: flex;
+    height: 100%;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 280px;
+    background-color: var(--sidebar-bg);
+    padding: 25px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--neon-blue);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.profissao-item {
+    padding: 14px 18px;
+    margin-bottom: 6px;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.profissao-item:hover, .profissao-item.active {
+    background-color: rgba(0, 243, 255, 0.08);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* --- Main Content --- */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    overflow-y: auto;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* --- Chart --- */
+.chart-section {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 16px;
+    height: 40vh;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+/* --- Cards --- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    text-align: left;
+    transition: transform 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 243, 255, 0.2);
+}
+
+.card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card p {
+    color: var(--neon-blue);
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+/* --- MARCA D'ÁGUA --- */
+.watermark {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1000;
+    letter-spacing: 0.5px;
+}

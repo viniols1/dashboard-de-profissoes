@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Profissões</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="intro-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Mapeamento de Carreiras</h2>
+            <p>Seja bem-vindo ao seu dashboard interativo de profissões.</p>
+            <p>
+                Este painel foi desenvolvido para auxiliar na análise de tendências de mercado, 
+                salários e demanda por profissionais nos próximos 10 anos.
+            </p>
+            <div class="alert-box">
+                <strong>ATENÇÃO:</strong> Todos os dados estatísticos, moedas (R$) e projeções 
+                apresentados neste sistema referem-se exclusivamente ao <strong>MERCADO BRASILEIRO</strong>.
+            </div>
+            <button onclick="fecharModal()" class="btn-start">ACESSAR DADOS</button>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>MERCADO 2025</h2>
+            <div id="lista-profissoes" class="lista-items"></div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1 id="titulo-profissao">Carregando...</h1>
+                <p id="desc-profissao">Selecione uma profissão ao lado.</p>
+            </header>
+
+            <section class="chart-section">
+                <canvas id="meuGrafico"></canvas>
+            </section>
+
+            <section class="cards-grid">
+                <div class="card">
+                    <h3>Salário Médio</h3>
+                    <p id="info-salario">---</p>
+                </div>
+                <div class="card">
+                    <h3>Crescimento (1 Ano)</h3>
+                    <p id="info-crescimento">---</p>
+                </div>
+                <div class="card">
+                    <h3>Profissionais Ativos</h3>
+                    <p id="info-ativos">---</p>
+                </div>
+                <div class="card">
+                    <h3>Nível de Estresse</h3>
+                    <p id="info-estresse">---</p>
+                </div>
+
+                <div class="card">
+                    <h3>Crescimento (10 Anos)</h3>
+                    <p id="info-futuro" style="color: #00ff88;">---</p>
+                </div>
+                <div class="card">
+                    <h3>Formados / Ano</h3>
+                    <p id="info-formados">---</p>
+                </div>
+                <div class="card">
+                    <h3>Vagas Abertas / Ano</h3>
+                    <p id="info-demanda">---</p>
+                </div>
+                <div class="card">
+                    <h3>Gap de Mercado</h3>
+                    <p id="info-gap" style="font-size: 1.2rem;">---</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="watermark">
+        Desenvolvido por: Vinicius Oliveira - Desenvolvedor Web &copy; 2025
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
