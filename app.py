@@ -196,7 +196,7 @@ dados_profissoes = [
         "descricao": "Gestão tributária, balanços e conformidade fiscal.",
         "perspectiva_10_anos": "-10% (Automação)",
         "formados_ano": 70000,
-        "demanda_anual": 65000  # Saturado
+        "demanda_anual": 65000
     },
     {
         "id": 17,

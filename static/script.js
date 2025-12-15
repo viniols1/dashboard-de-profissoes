@@ -62,11 +62,9 @@ function atualizarDashboard(item) {
     const elementoGap = document.getElementById('info-gap');
 
     if (gap > 0) {
-        // Déficit
         elementoGap.innerText = `DÉFICIT (Faltam ${gap.toLocaleString('pt-BR')})`;
         elementoGap.style.color = "#00f3ff"; 
     } else if (gap < 0) {
-        // Saturado
         const sobra = Math.abs(gap);
         elementoGap.innerText = `SATURADO (Sobram ${sobra.toLocaleString('pt-BR')})`;
         elementoGap.style.color = "#ff4444"; 
@@ -88,10 +86,10 @@ function atualizarGrafico(item) {
     const salarioBase = parseFloat(item.salario_medio.replace('R$ ', '').replace('.', ''));
     
     const dadosSalariais = [
-        salarioBase * 0.6, // Jr
-        salarioBase,       // Pleno
-        salarioBase * 1.4, // Senior
-        salarioBase * 1.8  // Especialista
+        salarioBase * 0.6, 
+        salarioBase,       
+        salarioBase * 1.4, 
+        salarioBase * 1.8  
     ];
 
     chartInstance = new Chart(ctx, {

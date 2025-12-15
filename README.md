@@ -1,7 +1,5 @@
 # 📊 Dashboard de Análise de Mercado de Profissões
 
-> **Descrição do Repositório:** Dashboard interativo full-stack para análise de tendências do mercado de trabalho. Desenvolvido com Python (Flask), JS e Chart.js, inclui sistema lógico para cálculo de déficit de vagas e projeções salariais.
-
 ![Status](https://img.shields.io/badge/Status-Finalizado-green) ![Python](https://img.shields.io/badge/Python-3.13-blue) ![Flask](https://img.shields.io/badge/Flask-Framework-red) ![FrontEnd](https://img.shields.io/badge/FrontEnd-HTML%2FCSS%2FJS-orange)
 
 ## 📖 Sobre o Projeto
